@@ -742,11 +742,11 @@ Instance.new("UICorner", stopAllBtn).CornerRadius = UDim.new(0, 8)
 
 
 local function getCurrentOffsetName()
-    if verticalOffset == -3 then
+    if verticalOffset == 0 then
         return "DEFAULT STANDART"
-    elseif verticalOffset == -4 then
+    elseif verticalOffset == -1 then
         return "MINI"
-    elseif verticalOffset == 0 then
+    elseif verticalOffset == 3 then
         return "TINGGI"  
     else
         return "CUSTOM"
@@ -814,19 +814,19 @@ end
 offsetButton.MouseButton1Click:Connect(toggleOffsetOptions)
 
 optionDefault.MouseButton1Click:Connect(function()
-    setOffset(-3, "DEFAULT STANDART")  -- DEFAULT = 0
+    setOffset(0, "DEFAULT STANDART")  -- DEFAULT = 0
 end)
 
 optionMini.MouseButton1Click:Connect(function()
-    setOffset(-4, "MINI")  
+    setOffset(-1, "MINI")  
 end)
 
 optionTinggi.MouseButton1Click:Connect(function()
-    setOffset(0, "TINGGI")
+    setOffset(3, "TINGGI")
 end)
 
 resetAvatarBtn.MouseButton1Click:Connect(function()
-    verticalOffset = -3
+    verticalOffset = 0
     offsetButton.Text = "AVATAR: DEFAULT STANDART"
     print("✅ Track vertical offset direset ke DEFAULT (0)")
 end)
